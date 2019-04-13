@@ -1,5 +1,5 @@
 # react-native-typescript-mobx-example
-This is an essential example to build react-native app using typescript and Mobx
+This is an essential example to build react-native app using Typescript and Mobx
 
 Step to run
 1. Checkou this respo
