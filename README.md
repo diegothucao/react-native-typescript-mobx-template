@@ -2,7 +2,7 @@
 This is an essential example to build react-native app using Typescript and Mobx
 
 Step to run
-1. Checkou this respo
+1. Checkout this respo
 2. `yarn install`
 3. `react-native run-ios` OR `react-native run-android`
 
