@@ -6,6 +6,32 @@ Step to run
 2. `yarn install`
 3. `react-native run-ios` OR `react-native run-android`
 
+Define model 
+
+```typescript 
+import Cause from "./Cause"
+import User from "./User"
+import CommonModel from "./CommonModel"
+
+export declare type Deals = Deal[]
+
+export declare type UDeal = Deal | undefined
+
+export default interface Deal extends CommonModel {
+    key: string
+    dealType: string
+    title: string
+    price: number
+    makerPercentage: number
+    description: string
+    tags: string
+    url: string
+    media: string []
+    cause?: Cause | null
+    user?:  User | null
+}
+```
+
 Define store 
 
 ```typescript 
@@ -52,6 +78,34 @@ export default class AppStore {
     @computed get currentDeal() {
         return this.deals.find((deal) => deal.key === this.currentDealId)
     }
+}
+```
+
+Call in component 
+
+```typescript 
+export interface Props {
+  appStore: AppStore
+}
+
+@inject("appStore") @observer
+class App extends React.Component<Props> {
+
+  searchDeals = (searchTerm: string) => {
+    this.props.appStore.setSearchTerm(searchTerm)
+  }
+
+  setCurrentDeal = (dealId: string) => {
+    this.props.appStore.setCurrentDeal(dealId)
+  }
+
+  unsetCurrentDeal = () => {
+    this.props.appStore.unsetCurrentDeal()
+  }
+
+  render() {
+    const appStore = this.props.appStore
+}
 }
 ```
 
