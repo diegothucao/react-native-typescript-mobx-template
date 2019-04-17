@@ -41,14 +41,11 @@ class App extends React.Component<Props> {
         </View>
       )
     }
-    const dealsToDisplay =
-      appStore.deals.length > 0
-        ? appStore.deals
-        : []
+
     return (
       <View style={styles.main}>
         <SearchBar searchDeals={this.searchDeals} searchTerm={appStore.searchTerm.get()}/>
-        <DealList deals={dealsToDisplay} onItemPress={this.setCurrentDeal} />
+        <DealList deals={appStore.deals} onItemPress={this.setCurrentDeal} />
       </View>
     )
   }
