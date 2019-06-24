@@ -1,5 +1,5 @@
 # React Native, Typescript and Mobx
-This is an essential example to build React-native app using Typescript and Mobx
+This is an essential example to build React-native app using Typescript and Mobx.
 
 Step to run
 1. Clone the [repo](https://github.com/diegothucao/react-native-typescript-mobx-template)
